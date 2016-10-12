@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Poisson Rouge</string>
+    <string name="addItemHint">New Item</string>
+</resources>

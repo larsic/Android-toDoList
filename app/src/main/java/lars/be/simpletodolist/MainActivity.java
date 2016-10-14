@@ -1,6 +1,7 @@
 package lars.be.simpletodolist;
 
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.support.v4.content.SharedPreferencesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -21,7 +23,7 @@ import static android.R.id.list;
 public class MainActivity extends AppCompatActivity {
 
     private EditText item;
-    private Button add;
+    private ImageButton add;
     private ListView dynamicListView;
     private ArrayList<String> list;
     private ArrayAdapter<String> adapter;
@@ -29,11 +31,16 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         item = (EditText) findViewById(R.id.myEditText);
-        add = (Button) findViewById(R.id.myAddButton);
+        add = (ImageButton) findViewById(R.id.myAddButton);
         dynamicListView = (ListView) findViewById(R.id.myListView);
         list = new ArrayList<String>();
         //list.add("Android Atc");
